@@ -86,3 +86,49 @@
 - **Payment Processing**: Handle payment transactions related to bookings.
 - **Review System**: Post and manage reviews for properties.
 - **Database Optimization**: Indexing: Implement indexes for fast retrieval of frequently accessed data. Caching: Use caching strategies to reduce database load and improve performance
+
+## API Security
+
+
+### 🔑 Authentication
+We use **token-based authentication** (e.g., JWT) to verify the identity of users accessing the API. Only authenticated users can perform certain operations like booking a property or writing a review.
+
+**Why it's important**: Prevents unauthorized access to user accounts and protects sensitive data such as personal information and booking history.
+
+### 🛂 Authorization
+Role-based access control (RBAC) is enforced to ensure users can only perform actions they're permitted to (e.g., only property owners can edit their own listings).
+
+**Why it's important**: Ensures that users can’t access or modify data they don’t own, maintaining trust and system integrity.
+
+### 🚫 Rate Limiting
+We apply rate limiting to restrict the number of API requests per user or IP address over time. This helps mitigate denial-of-service (DoS) attacks and abuse.
+
+**Why it's important**: Protects the API from being overwhelmed by excessive traffic, whether accidental or malicious.
+
+### 🔒 Data Encryption
+All data transmission is secured using **HTTPS** to encrypt data in transit.
+
+**Why it's important**: Protects against eavesdropping and man-in-the-middle attacks, especially during login or payment operations.
+
+### 💳 Payment Security
+Payment endpoints are integrated with secure, PCI-compliant providers. We do not store raw credit card data on our servers.
+
+## 🚀 CI/CD Pipeline
+
+### What is CI/CD?
+
+**CI/CD** stands for **Continuous Integration** and **Continuous Deployment/Delivery**. It is a set of practices that automatically build, test, and deploy code changes, ensuring fast and reliable software delivery.
+
+- **Continuous Integration (CI)**: Automatically tests and integrates code changes from multiple contributors into the main branch, reducing bugs and integration issues.
+- **Continuous Deployment (CD)**: Automatically deploys the latest code to a staging or production environment after passing tests.
+
+### Why CI/CD is Important
+
+- 🚫 **Reduces Human Error**: Automates repetitive tasks like testing and deployment.
+- ⚡ **Faster Releases**: Streamlines the development workflow and enables quicker feature delivery.
+- 🔒 **Improves Quality**: Ensures code is tested consistently and automatically before deployment.
+- 🔄 **Feedback Loop**: Gives developers immediate feedback on code health and test status.
+
+### Tools Used
+
+- **GitHub Actions**: For automating workflows such as testing, linting, and deployment on every push or pull
