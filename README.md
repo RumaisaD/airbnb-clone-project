@@ -9,6 +9,14 @@
 # Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
 # technology stack from django to SQL
 
+## Team Roles
+
+- **Backend Developer**: Responsible for implementing API endpoints, database schemas, and business logic.
+- **Database Administrator**: Manages database design, indexing, and optimizations.
+- **DevOps Engineer**: Handles deployment, monitoring, and scaling of the backend services.
+- **QA Engineer**: Ensures the backend functionalities are thoroughly tested and meet quality standards.
+
+
 ## 📦 Technology Stack
 
 - **Django**: A high-level Python web framework used to build the backend and RESTful APIs quickly and securely.
