@@ -76,4 +76,13 @@
 - A **Property** can have many **Bookings** and **Reviews**.
 - A **Booking** belongs to one **User** and one **Property**.
 - A **Review** is written by a **User** for a **Property**.
-- A **Payment** is associated with one **Booking** only.
+
+## Feature Breakdown
+
+- **API Documentation**: Documenting using OpenAPI standard. Django REST framework: comprehensive RESTful API. GraphQL: flexibile and efficient query 
+- **User Authentication**: Register new users, authenticate and manage user profiles.
+- **Property Management**: Create, update and retrieve.
+- **Booking System**: Make, update and manage bookings + check in and check out.
+- **Payment Processing**: Handle payment transactions related to bookings.
+- **Review System**: Post and manage reviews for properties.
+- **Database Optimization**: Indexing: Implement indexes for fast retrieval of frequently accessed data. Caching: Use caching strategies to reduce database load and improve performance
