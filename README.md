@@ -17,7 +17,7 @@
 - **QA Engineer**: Ensures the backend functionalities are thoroughly tested and meet quality standards.
 
 
-## 📦 Technology Stack
+## Technology Stack
 
 - **Django**: A high-level Python web framework used to build the backend and RESTful APIs quickly and securely.
 - **PostgreSQL**: A powerful open-source relational database system used for managing and storing structured application data.
@@ -26,3 +26,54 @@
 - **Redis**: An in-memory data structure store used as a cache and message broker to improve performance.
 - **Celery**: An asynchronous task queue/job queue based on distributed message passing, used for handling background tasks.
 
+## Database Design
+
+### Entities and Key Fields
+
+#### 1. Users
+- `id` (Primary Key): Unique identifier for each user
+- `name`: Full name of the user
+- `email`: Unique email address for login
+- `password`: Encrypted user password
+- `created_at`: Timestamp when the user account was created
+
+#### 2. Properties
+- `id` (Primary Key): Unique identifier for each property
+- `user_id` (Foreign Key): References the owner (user) of the property
+- `title`: Property title or listing name
+- `description`: Detailed information about the property
+- `location`: Geographic location/address
+- `price_per_night`: Cost to rent per night
+
+#### 3. Bookings
+- `id` (Primary Key): Unique booking ID
+- `user_id` (Foreign Key): Guest who made the booking
+- `property_id` (Foreign Key): Booked property
+- `start_date`: Booking check-in date
+- `end_date`: Booking check-out date
+- `status`: Booking status (e.g., confirmed, cancelled)
+
+#### 4. Payments
+- `id` (Primary Key): Unique identifier for each payment
+- `booking_id` (Foreign Key): References the booking being paid for
+- `amount`: Total payment amount
+- `payment_method`: Method used for the transaction
+- `status`: Status of payment (e.g., successful, failed)
+- `created_at`: Timestamp of the payment
+
+#### 5. Reviews
+- `id` (Primary Key): Unique identifier for each review
+- `user_id` (Foreign Key): Reviewer (guest)
+- `property_id` (Foreign Key): Reviewed property
+- `rating`: Numeric rating (e.g., 1 to 5)
+- `comment`: Text review
+- `created_at`: Timestamp of review submission
+
+### Entity Relationships
+
+- A **User** can own multiple **Properties** (`user_id` in Properties).
+- A **User** can make multiple **Bookings**.
+- A **Property** can have many **Bookings** and **Reviews**.
+- A **Booking** belongs to one **User** and one **Property**.
+- A **Review** is written by a **User** for a **Property**.
+- A **Payment** is associated with one **Booking** only.
